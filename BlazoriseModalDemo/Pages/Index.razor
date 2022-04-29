@@ -1,0 +1,44 @@
+﻿@page "/"
+@using Blazorise
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+
+<Button Clicked="@Button1Click">Button1</Button>
+
+ <Modal @ref="modalRef">
+        <ModalContent Centered>
+            <ModalHeader>
+                <ModalTitle>Employee edit</ModalTitle>
+                <CloseButton />
+            </ModalHeader>
+            <ModalBody>
+                <Field>
+                    <FieldLabel>Name</FieldLabel>
+                    <TextEdit Placeholder="Enter name..." />
+                </Field>
+                <Field>
+                    <FieldLabel>Surname</FieldLabel>
+                    <TextEdit Placeholder="Enter surname..." />
+                </Field>
+            </ModalBody>
+
+        </ModalContent>
+    </Modal>
+
+
+@code{
+    private Modal modalRef;
+    private async Task Button1Click()
+    {
+        modalRef.Show();
+        await Task.Delay(10);
+        modalRef.Hide();
+    }
+}
