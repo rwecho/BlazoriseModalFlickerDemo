@@ -37,8 +37,8 @@ Welcome to your new app.
     private Modal modalRef;
     private async Task Button1Click()
     {
-        modalRef.Show();
+        await modalRef.Show();
         await Task.Delay(10);
-        modalRef.Hide();
+        await modalRef.Hide();
     }
 }
